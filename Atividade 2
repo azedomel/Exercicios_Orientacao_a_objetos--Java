@@ -1,0 +1,55 @@
+//Exercício com atributos de música e opção para avaliação com duas classes.
+//Classe Principal
+import java.util.Scanner;
+public class Principal {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Deseja ver a ficha técnica da música? (S/N)");
+        char opcao = scan.next().charAt(0);
+        
+        if (opcao == 'S' || opcao == 's') {
+            FichaTecnica f = new FichaTecnica();
+            f.Mostraficha();
+            System.out.println("Deseja ver avaliar a música? (S/N)");
+            char opcao2 = scan.next().charAt(0);
+            
+            if(opcao2 == 'S' || opcao2 == 's'){
+                System.out.println("de 1 a 10 qual sua nota?: ");
+                float av = scan.nextFloat();
+                if(av > 10 || av < 1){
+                    System.out.println("nota errada!");
+                }else{
+                    f.Fichaatualizada();
+                    System.out.println("A media das notas é 8.5");
+                }
+            }
+            else{
+                System.out.println("Programa encerrado!");
+            }
+        }
+        else {
+            System.out.println("Programa encerrado!");
+        }
+    }
+}
+
+//Classe Ficha tecnica
+class FichaTecnica {
+    String titulo = "Zé Neto e Cristiano";
+    String artista = "Oi Balde";
+    int anoLancamento = 2019;
+    int numDeAvaliacoes = 100000;
+
+    void Mostraficha() {
+        System.out.println("Título: " + titulo);
+        System.out.println("Artista: " + artista);
+        System.out.println("Ano de Lançamento: " + anoLancamento);
+        System.out.println("Número de Avaliações: " + numDeAvaliacoes);
+    }
+    void Fichaatualizada(){
+        System.out.println("Título: " + titulo);
+        System.out.println("Artista: " + artista);
+        System.out.println("Ano de Lançamento: " + anoLancamento);
+        System.out.println("Número de Avaliações: " + numDeAvaliacoes + 1);
+    }
+}
