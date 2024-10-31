@@ -1,0 +1,16 @@
+//Exercício de calculadora que imprime no console o dobro do valor definido no método com duas classes.
+//Classe Principal
+public class Principal {
+    public static void main(String[] args) {
+        Calculadora calc = new Calculadora();
+        float total = calc.calculaDobro(10);
+        
+        System.out.println("O dobro do valor é: " +  total);
+    }
+}
+//Classe Calculadora
+public class Calculadora {
+    float calculaDobro(float num) {
+        return num * 2;
+    }
+}
