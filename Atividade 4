@@ -1,0 +1,30 @@
+//Exercício que imprime os valores nome e idade do aluno no console com duas classes.
+//Classe Principal
+import java.util.Scanner;
+public class Principal {
+    public static void main(String[] args) {
+        Fichaluno f = new Fichaluno();
+        Scanner scan = new Scanner(System.in);
+        
+        System.out.println("Qual o nome do aluno? ");
+        String Nome1 = scan.nextLine();
+        
+        System.out.println("Qual a idade do aluno? ");
+        int Idade1 = scan.nextInt();
+        
+        f.Nome = Nome1;
+        f.Idade = Idade1;
+        f.aluno();
+    }
+}
+
+//Classe Ficha aluno
+public class Fichaluno {
+    String Nome;
+    int Idade;
+    Void aluno(){
+        System.out.println("Nome do aluno: " + Nome);
+        System.out.println("Idade do aluno: " + Idade);
+        return null;
+    }
+}
